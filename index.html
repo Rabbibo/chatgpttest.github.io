@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Group Chat Service</title>
+    <style>
+      .chat-box {
+        width: 500px;
+        height: 400px;
+        border: 1px solid black;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Group Chat Service</h1>
+    <div class="chat-box" id="chat-box">
+      <!-- Chat messages will be displayed here -->
+    </div>
+    <br>
+    <input type="text" id="message-input">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+      function sendMessage() {
+        // Get the inputted message
+        const messageInput = document.getElementById("message-input").value;
+
+        // Create a new element to display the message
+        const messageElement = document.createElement("p");
+        messageElement.innerText = messageInput;
+
+        // Append the message to the chat box
+        document.getElementById("chat-box").appendChild(messageElement);
+
+        // Clear the input field
+        document.getElementById("message-input").value = "";
+      }
+    </script>
+  </body>
+</html>
